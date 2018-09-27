@@ -1,22 +1,21 @@
 #include <iostream>
 
-void funct(double n) {
-	if (n == 1) {
-		std::cout << "Yes" << std::endl;
-	} 
-	else if (n > 1 && n < 2) {
-		std::cout << "No" << std::endl;
-	} 
-	else 
-		funct(n / 2);
+int funct(double n) {
+	if (n == 1) 
+		return 1;
+	if (n > 1 && n < 2) 
+		return 0;
+	return funct(n / 2);
+	
 }
 
 int main()
 {
-	int n;
-	std::cout << "Enter N: - ";
-	std::cin >> n;
-	funct(n);
+	double number;
+	std::cout << "Enter Number: - ";
+	std::cin >> number;
+	funct(number);
+	funct(number) == 1 ? std::cout << "Yes" << std::endl : std::cout << "No" << std::endl;
 	system("pause");
 	return 0;
 }
